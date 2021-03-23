@@ -1,25 +1,29 @@
 {
   "name": "pull-request-time",
-  "displayName": "pull-request-time",
-  "description": "",
+  "displayName": "Pull Request Time",
+  "description": "Helps you to remember if it is a Pull Request Time",
+  "publisher": "gabriielbs0673",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielbs/vscode-pull-request-time"
+  },
   "engines": {
     "vscode": "^1.54.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "git, github, javascript"
   ],
   "activationEvents": [
     "*"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "pull-request-time.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
