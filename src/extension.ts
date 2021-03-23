@@ -3,7 +3,7 @@ import { exec } from "child_process";
 
 // Receive this consts from extension config
 const MAX_FILES_CHANGED = 10;
-const CHECK_INTERVAL_TIME = 1000 * 60 * 2;
+const CHECK_INTERVAL_TIME = 1000 * 60 * 5;
 
 const performPullRequestChecks = (filesChanged: number) => {
   if (filesChanged > MAX_FILES_CHANGED) {
