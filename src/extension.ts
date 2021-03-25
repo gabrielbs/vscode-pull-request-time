@@ -5,7 +5,7 @@ import { exec } from "child_process";
 const MAX_FILES_CHANGED = 10;
 const CHECK_INTERVAL_TIME = 1000 * 60 * 5;
 
-const performPullRequestChecks = (filesChanged: number) => {
+export const performPullRequestChecks = (filesChanged: number) => {
   if (filesChanged > MAX_FILES_CHANGED) {
     vscode.window
       .showInformationMessage(
@@ -19,7 +19,7 @@ const performPullRequestChecks = (filesChanged: number) => {
   }
 };
 
-function execShellCommand(cmd: string) {
+export function execShellCommand(cmd: string): Promise<string> {
   return new Promise((resolve, reject) => {
     exec(cmd, (error: any, stdout: string) => {
       if (stdout) {
@@ -31,9 +31,9 @@ function execShellCommand(cmd: string) {
   });
 }
 
-const getModifiedFilesAmount = async () => {
+export const getModifiedFilesAmount = async (): Promise<string> => {
   const cmd = await execShellCommand("git status -s -uno | wc -l");
-  return cmd;
+  return String(cmd);
 };
 
 let interval: NodeJS.Timeout;
