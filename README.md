@@ -18,7 +18,7 @@ Launch VS Code Quick Open (`Ctrl+P`), paste the following command, and press ent
 
 # Improvements
 
- - [ ] Receive interval time from extension configs
- - [ ] Receive target files changed from extension configs
- - [ ] Trigger commit action after click in the "Open It" button
+ - [ ] Receive interval time from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
+ - [ ] Receive target files changed from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
+ - [ ] Trigger commit action after click in the ["Open It" button](https://code.visualstudio.com/api/references/vscode-api#commands)
  - [ ] Create options in the Information Message like "Snooze for 10 minutes"
