@@ -7,7 +7,9 @@ This extension helps you to remember to make more commits and create smaller pul
 
 The default configuration checks every five minutes for your changes and if you have more than 250 modifications between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** 
 
-![pull request time demo](https://github.com/gabrielbs/vscode-pull-request-time/blob/main/demo.gif)
+<p align="center">
+ <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/demo.gif" />
+</p>
 
 # Instalation
 Search for `pull request time` on VSCode Extensions
