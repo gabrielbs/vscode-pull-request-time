@@ -7,7 +7,9 @@ This extension helps you to remember to make more commits and create smaller pul
 
 The default configuration checks every five minutes for your changes and if you have more than 250 modifications between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** 
 
-![pull request time demo](https://github.com/gabrielbs/vscode-pull-request-time/blob/main/demo.gif)
+<p align="center">
+ <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/demo.gif" />
+</p>
 
 # Instalation
 Search for `pull request time` on VSCode Extensions
@@ -21,6 +23,6 @@ Launch VS Code Quick Open (`Ctrl+P`), paste the following command, and press ent
 # Improvements
 
  - [ ] Receive interval time from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
- - [ ] Receive target files changed from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
+ - [ ] Receive max modification number from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
  - [ ] Trigger commit action after click in the ["Open It" button](https://code.visualstudio.com/api/references/vscode-api#commands)
  - [ ] Create options in the Information Message like "Snooze for 10 minutes"
