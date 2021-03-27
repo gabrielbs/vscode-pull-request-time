@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from "vscode";
-import {
-  execShellCommand,
-  getAlertTextMessage,
-} from "./utils/exec-shell-comands";
+import { execShellCommand } from "./utils/exec-shell-comands";
+import { getAlertTextMessage } from "./utils/formatters";
 
 // Receive this consts from extension config
 // const MAX_MODIFICATIONS_NUMBER = 200;
