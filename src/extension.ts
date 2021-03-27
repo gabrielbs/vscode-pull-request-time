@@ -42,16 +42,20 @@ const getTimeoutInterval = (selected?: ALERT_OPTIONS) => {
   );
 };
 
-export const performPullRequestChecks = (
+export const performPullRequestChecks = async (
   filesChanged: number,
   gitDiffText: string
 ) => {
   if (filesChanged > MAX_MODIFICATIONS_NUMBER) {
-    vscode.window
-      .showInformationMessage(getAlertTextMessage(gitDiffText), ...alertOptions)
-      .then((selection) => {
-        check(selection?.title);
-      });
+    try {
+      const { showInformationMessage } = vscode.window;
+      const message = getAlertTextMessage(gitDiffText);
+      const selection = await showInformationMessage(message, ...alertOptions);
+
+      check(selection?.title);
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 
