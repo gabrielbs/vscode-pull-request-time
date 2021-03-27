@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import {
   execShellCommand,
   getAlertTextMessage,
-} from "./utils/execShellCommand";
+} from "./utils/exec-shell-comands";
 
 // Receive this consts from extension config
 // const MAX_MODIFICATIONS_NUMBER = 200;
