@@ -24,6 +24,9 @@ export const dispatchMessage = async (message: string) => {
     const selection = await showInformationMessage(message, ...schema);
 
     loader(selection?.title);
+    if (selection?.title === MESSAGE.openIt) {
+      vscode.commands.executeCommand("git.commit");
+    }
   } catch (error) {
     console.log(error);
   }
