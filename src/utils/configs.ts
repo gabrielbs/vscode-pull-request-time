@@ -1,4 +1,4 @@
-export const MAX_MODIFICATIONS_NUMBER = 1;
+export const MAX_MODIFICATIONS_NUMBER = 200;
 
 export enum MESSAGE {
   openIt = "Open it 💜",
