@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from "vscode";
-import { execShellCommand } from "./utils/execShellCommand";
+import {
+  execShellCommand,
+  getAlertTextMessage,
+} from "./utils/execShellCommand";
 
 // Receive this consts from extension config
 // const MAX_MODIFICATIONS_NUMBER = 200;
@@ -45,11 +48,7 @@ export const performPullRequestChecks = (
 ) => {
   if (filesChanged > MAX_MODIFICATIONS_NUMBER) {
     vscode.window
-      .showInformationMessage(
-        `What do you think about opening a Pull Request? 🥰\n~ You already have ${gitDiffText}`,
-        {},
-        ...alertOptions
-      )
+      .showInformationMessage(getAlertTextMessage(gitDiffText), ...alertOptions)
       .then((selection) => {
         check(selection?.title);
       });
