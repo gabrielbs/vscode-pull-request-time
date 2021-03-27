@@ -9,7 +9,7 @@ import {
   INTERVAL,
   MAX_MODIFICATIONS_NUMBER,
   schema,
-} from "./utils/options";
+} from "./utils/configs";
 
 const getTimeoutInterval = (selected?: MESSAGE) => {
   return (
