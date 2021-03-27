@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import * as vscode from "vscode";
-import { exec } from "child_process";
+import { execShellCommand } from "./utils/execShellCommand";
 
 // Receive this consts from extension config
 // const MAX_MODIFICATIONS_NUMBER = 200;
@@ -55,18 +55,6 @@ export const performPullRequestChecks = (
       });
   }
 };
-
-export function execShellCommand(cmd: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    exec(cmd, (error: any, stdout: string) => {
-      if (stdout) {
-        resolve(stdout);
-      } else {
-        reject("Occurred something wrong running the command");
-      }
-    });
-  });
-}
 
 export const getModifiedFilesAmount = async (): Promise<string> => {
   const cmd = await execShellCommand("git diff --shortstat");
