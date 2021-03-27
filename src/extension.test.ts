@@ -19,7 +19,7 @@ describe("extension", () => {
 
   it("should work properly", async () => {
     jest.useFakeTimers();
-    extension.activate({} as vscode.ExtensionContext);
+    extension.activate();
     await jest.advanceTimersByTime(1000 * 60 * 5);
     expect(extension.performPullRequestChecks).toHaveBeenCalled();
   });
