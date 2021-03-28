@@ -22,6 +22,7 @@ const getTimeoutInterval = (selected?: MESSAGE) => {
 
 const selectionHandler = (selection?: OptionSchemaType) => {
   const { showInputBox } = vscode.window;
+  loader(selection?.title);
 
   if (selection?.title === MESSAGE.snoozeCustom) {
     showInputBox({
@@ -37,14 +38,16 @@ const selectionHandler = (selection?: OptionSchemaType) => {
   if (selection?.title === MESSAGE.openIt) {
     vscode.commands.executeCommand("git.commit");
   }
-
-  loader(selection?.title);
 };
 
 export const dispatchMessage = async (message: string) => {
   try {
     const { showInformationMessage } = vscode.window;
-    const selection = await showInformationMessage(message, ...optionsSchema);
+    const selection = await showInformationMessage(
+      message,
+      { modal: true },
+      ...optionsSchema
+    );
     selectionHandler(selection);
   } catch (error) {
     console.log(error);
