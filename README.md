@@ -1,19 +1,22 @@
 
 
 
+
 # It Is Pull Request Time? ⏰
 
-[Studies](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/) proves that developers should not review more than 400 lines of code at a time, but work in [small batches](https://cloud.google.com/solutions/devops/devops-process-working-in-small-batches) is hard! Mostly at the beginning.
+Some [studies](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/) proves that developers should not review more than 400 lines of code at time, but work in [small batches](https://cloud.google.com/solutions/devops/devops-process-working-in-small-batches) is hard, mostly when you're not used to it.
 
-This extension helps you to remember to make more commits and create smaller pull requests based on git modifications :)
+This extension helps you to create more commits and smaller pull requests based on git modifications :octocat:
+
+# How it works
 
 The default configuration checks every five seconds for your changes, and if you have more than **200 modifications** between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** ⏰ then you will have the options of:
 
-## Trigger a commit with the **Open It** option:
+### Trigger a commit with the **Open It** option:
 
  <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/commit-demo.gif" />
 
-## Or snooze it for five, ten or with custom minutes:
+### Or snooze it for five, ten or a custom amount minutes:
 
    <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/custom-snooze-demo.gif" />
 
