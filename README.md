@@ -9,11 +9,11 @@ This extension helps you to remember to make more commits and create smaller pul
 
 The default configuration checks every five seconds for your changes, and if you have more than **200 modifications** between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** ⏰ then you will have the options of:
 
-Trigger a commit with the **Open It** option:
+## Trigger a commit with the **Open It** option:
 
  <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/commit-demo.gif" />
 
-Snooze it for five, ten or with custom minutes:
+## Snooze it for five, ten or with custom minutes:
 
    <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/custom-snooze-demo.gif" />
 
