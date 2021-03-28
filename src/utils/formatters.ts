@@ -13,3 +13,6 @@ export const getModificationsNumber = (modifications: string) => {
     .map((item) => Number(item.replace(/[^0-9]+/g, "")))
     .reduce(sumAddedWithDeleted, 0);
 };
+
+export const formatCustomInterval = (interval?: number) =>
+  interval ? 1000 * 60 * interval : 0;

@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { execShellCommand } from "./utils/exec-shell-comands";
 import {
+  formatCustomInterval,
   getAlertTextMessage,
   getModificationsNumber,
 } from "./utils/formatters";
@@ -20,8 +21,19 @@ const getTimeoutInterval = (selected?: MESSAGE) => {
 
 export const dispatchMessage = async (message: string) => {
   try {
-    const { showInformationMessage } = vscode.window;
+    const { showInformationMessage, showInputBox } = vscode.window;
     const selection = await showInformationMessage(message, ...schema);
+
+    if (selection?.title === MESSAGE.snoozeCustom) {
+      showInputBox({
+        prompt: "How many minutes do you want to snooze? (number)",
+        placeHolder: "Ex: 10",
+      }).then((value) => {
+        loader(selection?.title, Number(value));
+      });
+
+      return;
+    }
 
     loader(selection?.title);
     if (selection?.title === MESSAGE.openIt) {
@@ -48,9 +60,13 @@ const checkFilesDiff = async () => {
 
 let interval: NodeJS.Timeout;
 
-const loader = (selected?: MESSAGE) => {
+const loader = (selected?: MESSAGE, customInterval?: number) => {
+  const timeout = !!customInterval
+    ? formatCustomInterval(customInterval)
+    : getTimeoutInterval(selected);
+
   clearInterval(interval);
-  interval = setInterval(checkFilesDiff, getTimeoutInterval(selected));
+  interval = setInterval(checkFilesDiff, timeout);
 };
 
 export function activate() {

@@ -4,6 +4,7 @@ export enum MESSAGE {
   openIt = "Open it 💜",
   snoozeForFive = "Snooze for 5 minutes",
   snoozeForTen = "Snooze for 10 minutes",
+  snoozeCustom = "Snooze for custom minutes",
 }
 
 export enum INTERVAL {
@@ -20,4 +21,5 @@ export const schema = [
   },
   { title: MESSAGE.snoozeForFive, interval: INTERVAL.fiveMinutes },
   { title: MESSAGE.snoozeForTen, interval: INTERVAL.tenMinutes },
+  { title: MESSAGE.snoozeCustom },
 ];
