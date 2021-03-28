@@ -10,7 +10,9 @@ This extension helps you to create more commits and smaller pull requests based 
 
 # How it works
 
-The default configuration checks every five seconds for your changes, and if you have more than **200 modifications** between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** ⏰ then you will have the options of:
+The default configuration checks every five seconds for your changes, and if you have more than **200 modifications** between *insertions* and *deletions* the extension will ask you if **It Is a Pull Request Time** ⏰
+
+Then, you will have options for
 
 ### Trigger a commit with the **Open It** option:
 
@@ -32,6 +34,4 @@ Launch VS Code Quick Open (`Ctrl+P`), paste the following command, and press ent
 # Improvements
 
  - [ ] Receive interval time from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
- - [ ] Receive max modification number from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
- - [ ] Trigger commit action after click in the ["Open It" button](https://code.visualstudio.com/api/references/vscode-api#commands)
- - [ ] Create options in the Information Message like "Snooze for 10 minutes"
+ - [ ] Receive max modifications number from [extension configs](https://code.visualstudio.com/api/extension-capabilities/common-capabilities#configuration)
