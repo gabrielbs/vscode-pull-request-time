@@ -13,7 +13,7 @@ The default configuration checks every five seconds for your changes, and if you
 
  <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/commit-demo.gif" />
 
-## Snooze it for five, ten or with custom minutes:
+## Or snooze it for five, ten or with custom minutes:
 
    <img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/custom-snooze-demo.gif" />
 
