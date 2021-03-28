@@ -14,7 +14,12 @@ export enum INTERVAL {
   tenMinutes = 1000 * 60 * 10,
 }
 
-export const schema = [
+export type OptionSchemaType = {
+  title: MESSAGE;
+  interval?: INTERVAL;
+};
+
+export const optionsSchema: OptionSchemaType[] = [
   {
     title: MESSAGE.openIt,
     interval: INTERVAL.openIt,

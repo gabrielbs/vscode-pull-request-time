@@ -9,36 +9,43 @@ import {
   MESSAGE,
   INTERVAL,
   MAX_MODIFICATIONS_NUMBER,
-  schema,
+  optionsSchema,
+  OptionSchemaType,
 } from "./utils/configs";
 
 const getTimeoutInterval = (selected?: MESSAGE) => {
   return (
-    schema.find((option) => option.title === selected)?.interval ||
+    optionsSchema.find((option) => option.title === selected)?.interval ||
     INTERVAL.default
   );
 };
 
+const selectionHandler = (selection?: OptionSchemaType) => {
+  const { showInputBox } = vscode.window;
+
+  if (selection?.title === MESSAGE.snoozeCustom) {
+    showInputBox({
+      prompt: "How many minutes do you want to snooze? (integer)",
+      placeHolder: "7",
+    }).then((value) => {
+      loader(selection?.title, Number(value));
+    });
+
+    return;
+  }
+
+  if (selection?.title === MESSAGE.openIt) {
+    vscode.commands.executeCommand("git.commit");
+  }
+
+  loader(selection?.title);
+};
+
 export const dispatchMessage = async (message: string) => {
   try {
-    const { showInformationMessage, showInputBox } = vscode.window;
-    const selection = await showInformationMessage(message, ...schema);
-
-    if (selection?.title === MESSAGE.snoozeCustom) {
-      showInputBox({
-        prompt: "How many minutes do you want to snooze? (number)",
-        placeHolder: "Ex: 10",
-      }).then((value) => {
-        loader(selection?.title, Number(value));
-      });
-
-      return;
-    }
-
-    loader(selection?.title);
-    if (selection?.title === MESSAGE.openIt) {
-      vscode.commands.executeCommand("git.commit");
-    }
+    const { showInformationMessage } = vscode.window;
+    const selection = await showInformationMessage(message, ...optionsSchema);
+    selectionHandler(selection);
   } catch (error) {
     console.log(error);
   }
