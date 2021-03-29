@@ -4,6 +4,7 @@
   "description": "Helps you to remember if it is a Pull Request Time",
   "publisher": "gabriielbs0673",
   "version": "0.0.5",
+  "icon": "logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/gabrielbs/vscode-pull-request-time"
