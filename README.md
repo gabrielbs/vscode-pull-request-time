@@ -1,8 +1,5 @@
 
-
-
-
-# It Is Pull Request Time? ⏰
+<img src="https://github.com/gabrielbs/vscode-pull-request-time/blob/main/logo-text.png" />
 
 Some [studies](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/) proves that developers should not review more than 400 lines of code at time, but work in [small batches](https://cloud.google.com/solutions/devops/devops-process-working-in-small-batches) is hard, mostly when you're not used to it.
 
