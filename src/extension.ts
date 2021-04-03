@@ -76,7 +76,7 @@ const loader = (selected?: MESSAGE, customInterval?: number) => {
     : getTimeoutInterval(selected);
 
   clearInterval(interval);
-  interval = setInterval(checkFilesDiff, timeout);
+  interval = setTimeout(checkFilesDiff, timeout);
 };
 
 export function activate() {
