@@ -45,7 +45,6 @@ export const dispatchMessage = async (message: string) => {
     const { showInformationMessage } = vscode.window;
     const selection = await showInformationMessage(
       message,
-      { modal: true },
       ...optionsSchema
     );
     selectionHandler(selection);
